@@ -1216,4 +1216,263 @@
 }
 .vc-input-area button {
     color: #333;
+
+}
+/* ==========================================
+   🎀 黑白软萌高级感增量补丁
+   ==========================================
+   放置位置：CSS文件最末尾
+========================================== */
+
+/* --- 1. 碎碎念样式 --- */
+.murmur-item {
+    margin-bottom: 15px;
+}
+
+.murmur-paper {
+    background: #fff;
+    padding: 15px 18px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border-left: 3px solid #333;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.murmur-paper::before {
+    content: '"';
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    font-size: 24px;
+    color: #e0e0e0;
+    font-family: Georgia, serif;
+}
+
+.murmur-content {
+    padding-left: 15px;
+    color: #333;
+}
+
+.murmur-time {
+    font-size: 11px;
+    color: #bbb;
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* --- 2. 备忘录样式 --- */
+.memo-item {
+    margin-bottom: 15px;
+}
+
+.memo-sticky {
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid #f0f0f0;
+}
+
+.memo-sticky.pink {
+    background: #fdf6f8;
+    border-color: #f5e0e5;
+}
+
+.memo-title {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.memo-content {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.memo-date {
+    font-size: 11px;
+    color: #bbb;
+}
+
+.memo-actions {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 12px;
+}
+
+.memo-actions i {
+    color: #ccc;
+    cursor: pointer;
+    font-size: 12px;
+    transition: color 0.2s;
+}
+
+.memo-actions i:active {
+    color: #333;
+}
+
+/* --- 3. 状态卡片样式 --- */
+.status-card-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.status-card {
+    background: #fff;
+    width: 280px;
+    border-radius: 24px;
+    padding: 28px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+    animation: scaleIn 0.25s ease;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.status-card-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #f5f5f5;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.status-card-name {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.status-card-content {
+    text-align: left;
+}
+
+.sc-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 13px;
+}
+
+.sc-item:last-child {
+    border-bottom: none;
+}
+
+.sc-label {
+    color: #aaa;
+}
+
+.sc-value {
+    color: #333;
+    font-weight: 500;
+    max-width: 140px;
+    text-align: right;
+}
+
+.status-card-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 22px;
+}
+
+.sc-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1.5px solid #ddd;
+    background: #fff;
+    color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.15s;
+}
+
+.sc-btn:active {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+/* --- 4. 胶囊按钮 --- */
+.capsule-btn {
+    border-radius: 20px !important;
+    padding: 10px 16px !important;
+    font-size: 12px !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #eee !important;
+    background: #fafafa !important;
+    color: #333 !important;
+}
+
+.capsule-btn:active {
+    background: #f0f0f0 !important;
+}
+
+/* --- 5. 手机端增强 --- */
+@media (max-width: 480px) {
+    .msg-content { max-width: 78%; }
+
+    .chat-tools-panel {
+        grid-template-columns: repeat(5, 1fr) !important;
+        gap: 12px 8px;
+    }
+
+    .tool-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+        border-radius: 14px;
+    }
+
+    .tool-name { font-size: 10px; }
+
+    #emojiList {
+        grid-template-columns: repeat(5, 1fr) !important;
+        gap: 6px !important;
+    }
+
+    .qq-tab-bar {
+        padding-bottom: env(safe-area-inset-bottom, 5px);
+    }
+
+    .status-card { width: 85%; }
+}
+
+/* --- 6. 触摸微反馈 --- */
+.chat-item:active,
+.contact-item:active,
+.tool-icon:active {
+    transform: scale(0.97);
+    opacity: 0.85;
 }
